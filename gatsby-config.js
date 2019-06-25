@@ -4,7 +4,7 @@ module.exports = {
     author: `Samik Shrotriya`,
     description: `Experimenting with a new blog.`,
     siteUrl: `https://samikshro.github.io`,
-    pathPrefix: "/samikshro.github.io",
+    pathPrefix: "/samik",
     social: {
       twitter: `samikshro`,
     },
