@@ -26,33 +26,37 @@ workbox.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-95c58e0612e7e6b50e24.js"
+    "url": "webpack-runtime-1997ee6b06346342a839.js"
   },
   {
-    "url": "styles.1025963f4f2ec7abbad4.css"
+    "url": "styles.322e1033e328b02587c8.css"
   },
   {
     "url": "styles-478c1cdaf68476c219ee.js"
   },
   {
-    "url": "app-49c47922accafeab4116.js"
+    "url": "app-0fe025e4ab18cc231ebd.js"
   },
   {
     "url": "component---node-modules-gatsby-plugin-offline-app-shell-js-1813af5f20236dfa448b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "9cffeecd6d40b8bb5d524d929fd3d632"
+    "revision": "e4546a9700b7f17c27fa6a4907be51e4"
   },
   {
-    "url": "component---src-pages-404-js-5a57a127afdb6fa77397.js"
+    "url": "component---src-pages-404-js-abb54f908927f7def418.js"
   },
   {
     "url": "0-3e8c22fb662c842d0a7d.js"
   },
   {
     "url": "page-data/404.html/page-data.json",
-    "revision": "7a8ddb92a2542c42c78c4840aa9a9d6a"
+    "revision": "3b470b313811683d1f0eccb6d211277c"
+  },
+  {
+    "url": "page-data/offline-plugin-app-shell-fallback/page-data.json",
+    "revision": "f7d1ae60c89f6fd5501c503da6fe6808"
   },
   {
     "url": "manifest.webmanifest",
@@ -78,7 +82,7 @@ const navigationRoute = new workbox.routing.NavigationRoute(({ event }) => {
   return idbKeyval.get(WHITELIST_KEY).then((customWhitelist = []) => {
     // Respond with the offline shell if we match the custom whitelist
     if (customWhitelist.includes(pathname)) {
-      const offlineShell = `/offline-plugin-app-shell-fallback/index.html`
+      const offlineShell = `/samik/offline-plugin-app-shell-fallback/index.html`
       const cacheName = workbox.core.cacheNames.precache
 
       return caches.match(offlineShell, { cacheName }).then(cachedResponse => {
@@ -150,7 +154,7 @@ const messageApi = {
 
     pathnames = pathnames.map(({ pathname, includesPrefix }) => {
       if (!includesPrefix) {
-        return `${pathname}`
+        return `/samik${pathname}`
       } else {
         return pathname
       }
